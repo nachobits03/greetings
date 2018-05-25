@@ -4,6 +4,8 @@ describe("Testing greeting logic", function(){
     // greet.userName("")
     // greet.userName("    ")
     greet.userName("Nathri");
+      greet.userName("Nathri");
+        greet.userName("Nathri");
     greet.greetMe("English");
     assert.equal(greet.respond(), "Hello, Nathri");
     assert.equal(greet.greetAmount(), 1);

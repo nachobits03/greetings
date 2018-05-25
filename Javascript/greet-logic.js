@@ -3,8 +3,8 @@ var GreetUser = function(){
   var name = "";
   var greet = "";
 var userName = function(input){
-  var one = input
-  if(one !== ""){
+  var one = input.trim();
+  if(one != name);{
     counter += 1;
   name = input;
 }
