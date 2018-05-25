@@ -1,0 +1,35 @@
+.top{
+border: 2px solid #dedede;
+    background-color: #f1f1f1;
+    border-radius: 5px;
+    padding: 10px;
+    margin: 10px 0;
+}
+.countDisplay{
+    color: #16B5C2;
+    font-size: 50px;
+}
+
+.darker {
+    border-color: #ccc;
+    background-color: #ddd;
+}
+
+textarea {
+     font-size: 30px;
+  }
+
+.button {
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+}
+
+.output{
+border: 2px solid #dedede;
+    background-color: #56514F;
+    border-radius: 5px;
+    padding: 10px;
+    margin: 10px 0;
+color: white;
+font-size: : 50px;
+}

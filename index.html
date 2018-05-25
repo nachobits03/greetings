@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="stylesheet" href="./css/normalize.css">
+    <link rel="stylesheet" href="./css/skeleton.css">
+    <link rel="stylesheet" href="./css/stylesheet.css">
+    <meta charset="utf-8">
+    <title>Greetings</title>
+  </head>
+  <body>
+<div class="container">
+  <div class="top">
+  <div class="four columns">
+<span id=""><h1>Greetings</h1></span>
+</div>
+<span class="countDisplay count"><h1>0</h1></span>
+
+</div>
+
+
+
+<div class = "top">
+
+<form action="">
+    <div class="two columns">
+    <input type="radio" name="language" class="greetLanguage" value="English">
+    <span>English</span>
+  </div>
+
+    <div class="two columns">
+    <input type="radio" name="language" class="greetLanguage" value="Japanese">
+    <span>Japanese</span>
+  </div>
+
+    <div class="two columns">
+    <input type="radio" name="language" class="greetLanguage" value="Italian">
+    <span>Italian</span>
+  </div>
+  </form>
+<div class="columns"></div>
+
+
+    <div class="two columns"><h2>Name</h2></div>
+<textarea name="name" rows="20" cols="20" font-size+ class="nameInput"></textarea>
+    <button class="button-primary greet" on type="button" name="button">Greet</button>
+    </div>
+<div class="output"><h2> </h2></div>
+
+</div>
+<script type="text/javascript" src="./Javascript/greet-logic.js"></script>
+<script type="text/javascript" src="./Javascript/greet-dom.js"></script>
+  </body>
+</html>
