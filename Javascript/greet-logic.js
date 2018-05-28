@@ -1,44 +1,61 @@
 var GreetUser = function(){
-  var counter = 0;
+
+  var namesList = {};
   var name = "";
   var greet = "";
+console.log(namesList)
+
 var userName = function(input){
   var one = input.trim();
-  if(one != name);{
-    counter += 1;
-  name = input;
+  var up = one.toUpperCase()
+    name = one;
+
+if(isNaN(up) == false ){
+return ""
+}
+ else if (namesList[up] === undefined){
+  namesList[up] = 0
 }
 };
+
 var greetAmount = function(){
-  return counter;
+  return Object.keys(namesList).length
 };
 
   var greetMe = function(input){
 
     if(input == "English"){
-      greet = "Hello, ";
+      greet = "Hello, "
   }
 
    if(input == "Japanese"){
-     greet = "Kon'nichiwa, ";
+     greet = "Kon'nichiwa, "
    }
 
    if(input == "Italian"){
-     greet = "Ciao, ";
+     greet = "Ciao, "
    }
 
   };
 
   var respond = function(){
+    if(isNaN(name) == true){
 return greet + name;
-};
+}
+else{
+  return "Insert name to be greeted"
+}
+}
 
-
-
+var reseter = function(){
+  name;
+  greet;
+}
   return{
     greetMe : greetMe,
     userName : userName,
     greetAmount : greetAmount,
-    respond : respond
+    respond : respond,
+    reseter : reseter
   };
 };
