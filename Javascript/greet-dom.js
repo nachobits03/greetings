@@ -6,7 +6,7 @@ var count = document.querySelector(".count");
 // var output = document.querySelector(".output");
 
 var greeter = GreetUser();
-
+var output = document.getElementById("output");
 
 
 var grt = function(){
@@ -24,19 +24,18 @@ greeter.greetMe(greetLanguageType);
 
 var value = greeter.greetAmount();
 var greeted = greeter.respond();
-var output = document.getElementById("output");
+
 output.innerHTML = greeted;
 count.innerHTML = value;
 console.log(named);
 };
 
 var clear = function(){
+   localStorage.clear()
    document.getElementById("thisDoc").reset();
-   var value = greeter.reseter();
-
-   var output = document.getElementById("output");
-   output.innerHTML = greeted;
-   count.innerHTML = value;
+      document.querySelector("input[name='language']:checked").checked = false
+      output.innerHTML = ""
+      count.innerHTML = "0";
 }
 
 greetButton.addEventListener("click", grt);

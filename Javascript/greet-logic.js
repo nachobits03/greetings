@@ -16,6 +16,10 @@ return ""
  else if (namesList[up] === undefined){
   namesList[up] = 0
 }
+if (typeof(Storage) !== "undefined") {
+    // Store
+    localStorage.setItem("firstname", up);
+  }
 };
 
 var greetAmount = function(){
@@ -48,8 +52,9 @@ else{
 }
 
 var reseter = function(){
-  name;
-  greet;
+  name = ""
+  greet = ""
+
 }
   return{
     greetMe : greetMe,
