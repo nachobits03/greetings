@@ -43,7 +43,7 @@ var greetAmount = function(){
 return greet + name;
 }
 else{
-  return "Insert name to be greeted"
+  return "Insert name to be greeted and make sure Language has been chosen"
 }
 }
 
