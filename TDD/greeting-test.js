@@ -1,8 +1,8 @@
 describe("Testing greeting logic", function(){
-  it("should greet using selected langauge and name", function(){
+  it("should greet using selected langauge and name and return 1 name greeted and ignoring blank spaces", function(){
     var greet = GreetUser();
-    // greet.userName("")
-    // greet.userName("    ")
+    greet.userName("")
+    greet.userName("    ")
     greet.userName("Nathri");
       greet.userName("Nathri");
         greet.userName("Nathri");
@@ -11,7 +11,7 @@ describe("Testing greeting logic", function(){
     assert.equal(greet.greetAmount(), 1);
   });
 
-  it("should greet using selected langauge and name", function(){
+  it("should greet using selected langauge and name and return 2 names greeted", function(){
     var greet = GreetUser();
     greet.userName("Nathri");
       greet.userName("Thomas");
@@ -20,7 +20,7 @@ describe("Testing greeting logic", function(){
     assert.equal(greet.greetAmount(), 2);
   });
 
-  it("should greet using selected langauge and name", function(){
+  it("should greet using selected langauge and name and return 3 names greeted", function(){
     var greet = GreetUser();
     greet.userName("Nathri");
     greet.userName("Thomas");

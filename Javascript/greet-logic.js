@@ -46,9 +46,25 @@ var greetAmount = function(){
     if(isNaN(name) == true){
 return greet + name;
 }
-else{
-  return "Insert name to be greeted and make sure Language has been chosen"
+
+
+else if(name == "" && greet !== ""){
+  return "Please Insert a name to be greeted"
 }
+
+else if (greet == "" && name !== ""){
+  return "Please Select Language to be greeted in"
+}
+
+else if (name == "" && greet == "") {
+  return "Select Language and Insert name to be greeted"
+}
+
+else if (isNaN(name) == false){
+  return "Please make sure your name doesnt contain any Numbers"
+}
+
+
 }
 
 var reseter = function(){
