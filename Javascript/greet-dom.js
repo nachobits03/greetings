@@ -34,8 +34,7 @@ var clear = function(){
    localStorage.clear()
    document.getElementById("thisDoc").reset();
       document.querySelector("input[name='language']:checked").checked = false
-      output.innerHTML = ""
-      count.innerHTML = "0";
+    
 }
 
 greetButton.addEventListener("click", grt);
