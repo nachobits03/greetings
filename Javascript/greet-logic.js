@@ -1,79 +1,60 @@
-var GreetUser = function(){
+var GreetUser = function(storedNameList) {
 
-  var namesList = {};
-  var name = "";
-  var greet = "";
-console.log(namesList)
+  // initialise namesList from localStorage if there are vales in localStorage
+  var namesList = storedNameList;
+  var greet; // <----
+  // console.log(namesList);
 
-var userName = function(input){
-  var one = input.trim();
-  var up = one.toUpperCase()
-    name = one;
+  // localStorage.setItem("namesList", JSON.stringify(namesList));
+  // return Object.keys(namesList).length
+  //...
+  // var storedNames = JSON.parse(localStorage.getItem("namesList"));
 
-if(isNaN(up) == false ){
-return ""
-}
- else if (namesList[up] === undefined){
-  namesList[up] = 0
-}
 
-};
+  var greetMe = function(name, language) {
+    var lang = language;
+    var one = name.toUpperCase();
 
-var greetAmount = function(){
-  return Object.keys(namesList).length
-};
 
-  var greetMe = function(input){
+    for (var i = 0; i < one.length; i++) {
 
-    if(input == "English"){
-      greet = "Hello, "
-  }
+      if (isNaN(one[i]) == false) {
+        return "Make sure your name doesn't contain any numeral values";
+      }
+    }
 
-   if(input == "Japanese"){
-     greet = "Kon'nichiwa, "
-   }
+    if (isNaN(one) == true) {
 
-   if(input == "Italian"){
-     greet = "Ciao, "
-   }
+      if (language == "English") {
+        greet = "Hello, " + one;
+      }
+
+      if (language == "Japanese") {
+        greet = "Kon'nichiwa, " + name;
+      }
+
+      if (language == "Italian") {
+        greet = "Ciao, " + name;
+      }
+    }
 
   };
 
-  var respond = function(){
-    if(isNaN(name) == true){
-return greet + name;
-}
-
-
-else if(name == "" && greet !== ""){
-  return "Please Insert a name to be greeted"
-}
-
-else if (greet == "" && name !== ""){
-  return "Please Select Language to be greeted in"
-}
-
-else if (name == "" && greet == "") {
-  return "Select Language and Insert name to be greeted"
-}
-
-else if (isNaN(name) == false){
-  return "Please make sure your name doesnt contain any Numbers"
-}
-
-
-}
-
-var reseter = function(){
-  name = ""
-  greet = ""
-
-}
-  return{
-    greetMe : greetMe,
-    userName : userName,
-    greetAmount : greetAmount,
-    respond : respond,
-    reseter : reseter
+  var respond = function() {
+    return greet;
   };
+  //
+  // var reseter = function() {
+  //   name = ""
+  //   greet = ""
+  //
+  // }
+  return {
+    greetMe: greetMe,
+    // //   greetAmount: greetAmount,
+    respond: respond
+    // //   reseter: reseter,
+    // //
+  };
+
 };
