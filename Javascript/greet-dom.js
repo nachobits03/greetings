@@ -3,8 +3,8 @@ var name = document.querySelector(".nameInput");
 var greetButton = document.querySelector(".greet");
 var resetButton = document.querySelector(".cleared");
 var count = document.querySelector(".count");
-// var output = document.querySelector(".output");
 
+ var storedNames = JSON.parse(localStorage.getItem("names"))
 var greeter = GreetUser();
 var output = document.getElementById("output");
 // var greetMe = function(name, language)
@@ -22,14 +22,14 @@ var grt = function() {
 
   greeter.greetMe(named, greetLanguageType);
 
+localStorage.setItem("names", JSON.stringify(greeter.namesList()));
 
 
-  // var value = greeter.greetAmount();
 
 
   output.innerHTML = greeter.respond();
-  // count.innerHTML = value;
-  console.log(named);
+   count.innerHTML = greeter.counter()
+  // console.log(named);
 };
 
 var clear = function() {

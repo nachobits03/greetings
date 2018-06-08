@@ -1,59 +1,65 @@
-var GreetUser = function(storedNameList) {
+var GreetUser = function(storedNames) {
 
   // initialise namesList from localStorage if there are vales in localStorage
-  var namesList = storedNameList;
+  var storedNamesList = {} || storedNames
   var greet; // <----
-  // console.log(namesList);
+
 
   // localStorage.setItem("namesList", JSON.stringify(namesList));
-  // return Object.keys(namesList).length
-  //...
+
+
   // var storedNames = JSON.parse(localStorage.getItem("namesList"));
 
 
   var greetMe = function(name, language) {
-    var lang = language;
-    var one = name.toUpperCase();
+    if (name === "") {
+      greet = "Please insert a name"
+    }
+    var one = name.trim().toUpperCase();
+
+  for (var i = 0; i < one.length; i++) {
+      if (isNaN(one[i]) === false) {
+        greet = "Make sure your name doesn't contain any numeral values";
+      }  if(language === undefined) {
+        greet = "Please select a language"
+      }
 
 
-    for (var i = 0; i < one.length; i++) {
+    else if (isNaN(one) === true && language !== undefined) {
+      if (storedNamesList[one] === undefined && one !== /^([^0-9]*)$/) {
+        storedNamesList[one] = 0
 
-      if (isNaN(one[i]) == false) {
-        return "Make sure your name doesn't contain any numeral values";
+        if (language == "English") {
+          greet = "Hello, " + one;
+        }
+
+        if (language == "Japanese") {
+          greet = "Kon'nichiwa, " + one;
+        }
+
+        if (language == "Italian") {
+          greet = "Ciao, " + one;
+        }
       }
     }
-
-    if (isNaN(one) == true) {
-
-      if (language == "English") {
-        greet = "Hello, " + one;
-      }
-
-      if (language == "Japanese") {
-        greet = "Kon'nichiwa, " + name;
-      }
-
-      if (language == "Italian") {
-        greet = "Ciao, " + name;
-      }
-    }
-
   };
-
+}
   var respond = function() {
     return greet;
   };
-  //
-  // var reseter = function() {
-  //   name = ""
-  //   greet = ""
-  //
-  // }
+
+var namesList = function(){
+  return storedNamesList;
+}
+
+  var counter = function() {
+    return Object.keys(storedNamesList).length
+  }
   return {
     greetMe: greetMe,
-    // //   greetAmount: greetAmount,
-    respond: respond
-    // //   reseter: reseter,
+    counter: counter,
+    respond: respond,
+   namesList:namesList
     // //
   };
 
