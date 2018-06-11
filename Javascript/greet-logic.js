@@ -25,15 +25,15 @@ else if (one !== "" && language === undefined){
       }
 
       if (language == "English") {
-        greet = "Hello, " + one;
+        greet = "Hello, " + name;
       }
 
       else if (language == "Japanese") {
-        greet = "Kon'nichiwa, " + one;
+        greet = "Kon'nichiwa, " + name;
       }
 
       else if (language == "Italian") {
-        greet = "Ciao, " + one;
+        greet = "Ciao, " + name;
       }
     }
   };
