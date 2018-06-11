@@ -1,42 +1,37 @@
 var radioButtonOption = document.querySelector(".greetLanguage");
-var name = document.querySelector(".nameInput");
 var greetButton = document.querySelector(".greet");
 var resetButton = document.querySelector(".cleared");
 var count = document.querySelector(".count");
+var namesStoredInLocalStorage = JSON.parse(localStorage.getItem("names"));
 
- var storedNames = JSON.parse(localStorage.getItem("names"))
-var greeter = GreetUser();
-var output = document.getElementById("output");
-// var greetMe = function(name, language)
+var greeter = GreetUser(namesStoredInLocalStorage);
+// init the counter
+count.innerHTML = greeter.counter();
 
 var grt = function() {
-  var named = document.getElementById('nameInput').value;
-  var greetLanguageType;
+
 
   var checkedRadioBtn = document.querySelector("input[name='language']:checked");
   if (checkedRadioBtn) {
     greetLanguageType = checkedRadioBtn.value;
 
   }
-
-
+  var greetLanguageType;
+  var named = document.getElementById('nameInput').value;
   greeter.greetMe(named, greetLanguageType);
 
-localStorage.setItem("names", JSON.stringify(greeter.namesList()));
 
-
-
-
+  var output = document.getElementById("output");
   output.innerHTML = greeter.respond();
-   count.innerHTML = greeter.counter()
-  // console.log(named);
+  count.innerHTML = greeter.counter();
+  var namesToStore = JSON.stringify(greeter.namesList())
+  localStorage.setItem("names", namesToStore);
 };
 
 var clear = function() {
   localStorage.clear();
-  document.getElementById("thisDoc").reset();
   document.querySelector("input[name='language']:checked").checked = false;
-
+window.location.reload()
 };
 
 greetButton.addEventListener("click", grt);
