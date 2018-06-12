@@ -8,14 +8,21 @@ var GreetUser = function(storedNames) {
   var greetMe = function(name, language) {
     var one = name.trim().toUpperCase();
 
+    for (var i=0; i<name.length;i++){
+       if (isNaN(name[i]) === false){
+        greet = "Your name cannot contain any numbers";
+        return;
+      }
+    }
+
 if (one === ""){
   greet = "Insert a Name";
+  return;
 }
-else if (isNaN(name) === false){
-  greet = "Your name cannot contain any numbers";
-}
+
 else if (one !== "" && language === undefined){
   greet = "Select a Language";
+  return;
 }
 
     if (isNaN(one) === true && language !== undefined) {
