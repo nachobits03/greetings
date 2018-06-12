@@ -7,7 +7,7 @@ describe("Testing greeting logic", function() {
   });
 
 
-  it("should greet using selected langauge and name and return 1 name greeted and ignoring blank spaces", function() {
+  it("should greet 1 name in three languaages and return 1 name", function() {
     var greet = GreetUser();
 
     greet.greetMe("Nathri", "Italian");
