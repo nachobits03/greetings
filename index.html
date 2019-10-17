@@ -11,47 +11,67 @@
     <title>Greetings</title>
   </head>
   <body>
+      <nav></nav>
 <div class="container" >
+
+
+
   <div class="top">
+
+    <div class="row">
   <div class="four columns">
-<span id=""><h1>Greetings</h1></span>
+<span id=""><h1>Greetings: </h1></span>
 </div>
 
-<div class="countDisplay count"><h1>0</h1></div>
-
+<div class = "four columns">
+<div class="countDisplay count">
+  <h1>0</h1>
 </div>
-
-
+</div>
+</div>
+</div>
 
 <div class = "top">
-<div class="twelve columns" id="error"><h3> </h3></div>
-<form action="">
-    <div class="two columns">
-    <input type="radio" name="language" class="greetLanguage" value="English">
-    <span>English</span>
-  </div>
 
-    <div class="two columns">
-    <input type="radio" name="language" class="greetLanguage" value="Japanese">
-    <span>Japanese</span>
-  </div>
-
-    <div class="two columns">
-    <input type="radio" name="language" class="greetLanguage" value="Italian">
-    <span>Italian</span>
-  </div>
-  </form>
-<div class="columns"></div>
-
+<div class ="row">
 <form id="thisDoc">
-    <div class="three columns"><h2>Name</h2></div>
+    <div class="three columns"><h2>Name:</h2></div>
 <textarea class="six columns name="name" rows="10" cols="15" font-size+ id="nameInput"></textarea>
-    <button class="button-primary greet" on type="button" name="button">Greet</button>
- <button class="button-primary cleared" on type="button" name="button">Reset</button>
-</form></div>
+<div class="three columns">
+    <button class="button-primary greet" on type="button" name="button" id="greet">Greet</button>
+ <button class="button-primary cleared" on type="button" name="button" id="reset">Reset</button>
+</div>
+</form></div></div>
+
+<form action="">
+    <div class="row" id="error">
+    <div class="four columns">
+      <label class="languageSelect">English
+    <input type="radio" name="language" class="greetLanguage" value="english">
+    <span class="checkmark"></span>
+  </label>
+  </div>
+
+    <div class="four columns">
+        <label class="languageSelect">Japanese
+    <input type="radio" name="language" class="greetLanguage" value="japanese">
+    <span class="checkmark"></span>
+  </label>
+  </div>
+
+    <div class="four columns">
+        <label class="languageSelect">Italian
+    <input type="radio" name="language" class="greetLanguage" value="italian">
+    <span class="checkmark"></span>
+  </label>
+  </div>
+</div>
+  </form>
+
 <div class="output" id="output"><h2> </h2></div>
 
 </div>
+<script src="./Javascript/languageEnum.js"></script>
 <script type="text/javascript" src="./Javascript/greet-logic.js"></script>
 <script type="text/javascript" src="./Javascript/greet-dom.js"></script>
   </body>
